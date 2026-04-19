@@ -126,10 +126,29 @@
     </section>
 
         <section id="join" class="py-32 px-6">
-        <div class="max-w-2xl mx-auto text-center" data-aos="zoom-in">
-            <h2 class="text-4xl font-header gold-text mb-12 uppercase">Seja Parte da Engrenagem</h2>
-            
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeAXnWk_0yF7tM2vgGBrv1deywTHBa_Dfy5S5HXIaLxBcxbBA/formResponse" method="POST" class="space-y-8">
+    <div class="max-w-2xl mx-auto text-center" data-aos="zoom-in">
+        <h2 class="text-4xl font-header gold-text mb-12 uppercase">Seja Parte da Engrenagem</h2>
+        
+        <script type="text/javascript">
+            var submitted = false;
+            function handleFormSubmit() {
+                if(submitted) {
+                    // Aqui você define o que acontece após o envio
+                    document.getElementById('form-container').innerHTML = 
+                        "<h3 class='gold-text font-header text-2xl mb-4'>INTEGRAÇÃO INICIADA</h3>" +
+                        "<p class='text-gray-400 text-xs tracking-widest uppercase'>Verifique seu e-mail, ô fei. A firma não para.</p>";
+                }
+            }
+        </script>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSubmit()"></iframe>
+
+        <div id="form-container">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeAXnWk_0yF7tM2vgGBrv1deywTHBa_Dfy5S5HXIaLxBcxbBA/formResponse" 
+                  method="POST" 
+                  target="hidden_iframe" 
+                  onsubmit="submitted=true;" 
+                  class="space-y-8">
                 
                 <div class="text-left">
                     <label class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 block font-bold">Candidato, qual será o nome constado em seu crachá?</label>
@@ -148,7 +167,8 @@
                 <button type="submit" class="btn-elite w-full py-6 mt-8">Submeter ao Conselho</button>
             </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer class="py-20 text-center border-t border-white/5 opacity-30">
         <p class="text-[8px] tracking-[1em] uppercase">© 2026 THE FIRMA CORP | Absolute Discretion Required</p>
