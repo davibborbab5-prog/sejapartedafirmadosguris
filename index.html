@@ -125,13 +125,27 @@
         </div>
     </section>
 
-    <section id="join" class="py-32 px-6">
+        <section id="join" class="py-32 px-6">
         <div class="max-w-2xl mx-auto text-center" data-aos="zoom-in">
             <h2 class="text-4xl font-header gold-text mb-12 uppercase">Seja Parte da Engrenagem</h2>
-            <form class="space-y-8">
-                <input type="text" placeholder="Nome Completo Corporativo" class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest">
-                <input type="email" placeholder="E-mail de Intenção" class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest">
-                <button type="button" class="btn-elite w-full py-6 mt-8">Submeter ao Conselho</button>
+            
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScX_SUA_URL_AQUI/formResponse" method="POST" class="space-y-8">
+                
+                <div class="text-left">
+                    <label class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 block font-bold">Candidato, qual será o nome constado em seu crachá?</label>
+                    <input type="text" name="entry.1970529918" required 
+                        class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest text-white" 
+                        placeholder="Sua resposta aqui">
+                </div>
+
+                <div class="text-left">
+                    <label class="text-[10px] text-gray-500 uppercase tracking-widest mb-2 block font-bold">Qual é seu melhor e-mail para receber as metas?</label>
+                    <input type="email" name="entry.2039465174" required 
+                        class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest text-white" 
+                        placeholder="email@exemplo.com">
+                </div>
+
+                <button type="submit" class="btn-elite w-full py-6 mt-8">Submeter ao Conselho</button>
             </form>
         </div>
     </section>
