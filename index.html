@@ -3,135 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A FIRMA | Recruitment Portal</title>
+    <title>A FIRMA | Portal de Elite</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #D4AF37; --dark-bg: #080808; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-bg); color: white; overflow-x: hidden; }
-        .font-huge { font-family: 'Inter', sans-serif; font-weight: 900; }
-        .gold-gradient { background: linear-gradient(90deg, #D4AF37 0%, #F3E5AB 50%, #C5A028 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); }
-        .section-line { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); width: 100%; margin: 4rem 0; }
-        input::placeholder { color: rgba(255,255,255,0.2); }
-        .btn-main { background: var(--gold); color: black; font-weight: 900; letter-spacing: 2px; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .btn-main:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3); }
+        :root { --gold: #c5a028; --gold-light: #f3e5ab; --dark: #050505; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--dark); color: white; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* Efeito de Cursor/Luz de Fundo */
+        .cursor-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(197, 160, 40, 0.08) 0%, transparent 50%);
+            pointer-events: none; z-index: 9999;
+        }
+
+        .font-header { font-family: 'Cinzel', serif; letter-spacing: 0.2em; }
+        .gold-text { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-premium:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--gold);
+            transform: translateY(-10px);
+        }
+
+        .btn-elite {
+            position: relative; overflow: hidden;
+            background: var(--gold); color: black;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 3px;
+            transition: 0.4s;
+        }
+
+        .btn-elite::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-elite:hover::before { left: 100%; }
+
+        .line-accent { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
     </style>
 </head>
 <body>
+    <div class="cursor-glow"></div>
 
-    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <img src="Screenshot_20260419_124246_Gallery.jpg" alt="A Firma Capa" class="absolute inset-0 w-full h-full object-cover z-0 opacity-40 scale-105 transition-transform duration-[10s] hover:scale-100">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-1"></div>
-        
-        <div class="relative z-10 text-center px-4" data-aos="zoom-out" data-aos-duration="2000">
-            <h1 class="font-huge text-[12vw] leading-none uppercase mb-2 tracking-tighter">A <span class="gold-gradient">FIRMA</span></h1>
-            <p class="text-xs md:text-sm tracking-[1em] text-gray-400 uppercase font-bold mb-8">A Engrenagem que nunca dorme</p>
-            <div class="h-[2px] w-24 bg-white mx-auto mb-8"></div>
-            <p class="max-w-xl mx-auto text-lg md:text-xl font-light italic text-gray-300">
-                "Onde o seu esforço se torna o legado da nossa estrutura. Não é apenas trabalho, é <span class="text-white font-bold">pertencimento.</span>"
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="Screenshot_20260419_124246_Gallery.jpg" class="absolute inset-0 w-full h-full object-cover z-0 opacity-40 scale-110" id="hero-img">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-1"></div>
+
+        <div class="relative z-10 text-center px-6" data-aos="fade-up" data-aos-duration="2000">
+            <h1 class="font-header text-5xl md:text-8xl mb-4 gold-text">A FIRMA</h1>
+            <div class="line-accent w-64 mx-auto mb-6"></div>
+            <p class="text-[10px] md:text-xs tracking-[1.5em] text-white uppercase font-thin mb-12">The Machine Never Sleeps</p>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl font-light italic text-gray-400 leading-relaxed">
+                Onde o esforço individual é refinado para se tornar a base de uma estrutura inabalável. 
+                <span class="block mt-4 font-bold text-white">Não é sobre trabalhar. É sobre pertencer.</span>
             </p>
+            <a href="#join" class="btn-elite px-12 py-5 rounded-none mt-12 inline-block text-xs">Iniciar Integração</a>
         </div>
     </header>
 
-    <section class="py-32 px-6 max-w-6xl mx-auto border-l-2 border-[#D4AF37]/30 ml-6 md:ml-auto" data-aos="fade-up">
-        <span class="text-[#D4AF37] font-bold tracking-widest text-xs uppercase mb-4 block">01. Manifesto Corporativo</span>
-        <h2 class="text-4xl md:text-6xl font-huge uppercase mb-10 leading-tight">Nossa Essência <br>é a <span class="italic text-gray-500 font-light text-2xl md:text-4xl">Sinergia.</span></h2>
-        <p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-4xl">
-            A Firma não é um lugar, é um estado de espírito estatutário. Composta por centenas de talentos sinérgicos, somos o pilar que sustenta o progresso através da repetição e da disciplina. 
-            <br><br>
-            Ser um colaborador da Firma é entender que a sua individualidade serve a um propósito maior: o funcionamento impecável do nosso ecossistema colossal. Aqui, transformamos o tempo em resultado e o suor em dividendos sociais.
-        </p>
-    </section>
-
-    <section class="py-24 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-xs tracking-[0.5em] text-[#D4AF37] uppercase mb-12">02. Ecossistema de Benefícios</h2>
-            <div class="grid md:grid-cols-2 gap-1 px-1 bg-white/10 border border-white/10">
-                <div class="glass-card p-12 hover:bg-white/5 transition">
-                    <h3 class="text-xl font-bold uppercase mb-4 gold-gradient">Ouro Negro da Mobilidade</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Vale Transporte estrategicamente limitado às linhas T11 e 520.3. Curamos sua experiência para que você utilize frotas 100% climatizadas e renovadas. O frescor do ar condicionado é o nosso bônus de performance matinal.</p>
-                </div>
-                <div class="glass-card p-12 hover:bg-white/5 transition">
-                    <h3 class="text-xl font-bold uppercase mb-4 gold-gradient">Nutrição de Alta Performance</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Vale Alimentação estruturado para sustentar sua jornada de herói. A energia necessária para manter a engrenagem girando sem interrupções.</p>
-                </div>
-                <div class="glass-card p-12 hover:bg-white/5 transition">
-                    <h3 class="text-xl font-bold uppercase mb-4 gold-gradient">Arquitetura de Carreira 7x0</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Oferecemos a oportunidade rara de dedicação total. 9 horas diárias de foco absoluto. Folgas e feriados sob consulta para aqueles que realmente vestem (e não tiram) a camisa.</p>
-                </div>
-                <div class="glass-card p-12 hover:bg-white/5 transition">
-                    <h3 class="text-xl font-bold uppercase mb-4 gold-gradient">Suporte Omnipresente</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Um RH focado na eficiência máxima. Monitoramento próximo para garantir que cada engrenagem esteja lubrificada e em sua melhor forma funcional.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-32 text-center px-6">
-        <div data-aos="fade-zoom-in">
-            <h2 class="text-5xl md:text-8xl font-huge uppercase mb-6 tracking-tighter">SEM BARREIRAS. <br>SEM <span class="text-transparent stroke-white" style="-webkit-text-stroke: 1px white;">LIMITES.</span></h2>
-            <p class="max-w-2xl mx-auto text-gray-400 text-lg font-light">
-                Não exigimos qualificações prévias. A Firma é o seu útero profissional. Todo mundo pode entrar. Acreditamos na democratização do esforço. Uma vez dentro, a Firma molda você.
+    <section class="py-32 px-6 flex flex-col items-center">
+        <div class="max-w-4xl text-center" data-aos="fade-up">
+            <span class="text-gold tracking-widest text-xs uppercase mb-8 block">Capítulo 01: A Essência</span>
+            <h2 class="text-4xl md:text-6xl font-header mb-12 gold-text">Cultura & Importância</h2>
+            <p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+                A Firma não é um lugar, é um estado de espírito estatutário. Somos o pilar que sustenta o progresso através da repetição e da disciplina. 
+                Transformamos o tempo em resultado e o suor em dividendos sociais.
             </p>
         </div>
     </section>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <h2 class="text-center text-xs tracking-[0.5em] text-red-500 uppercase mb-16">03. Compliance & Filtros de Elite</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Apatia à Pressão</h4>
-                <p class="text-xs text-gray-500">Se você não brilha sob compressão, você não é diamante. O ecossistema exige resiliência absoluta.</p>
+    <section class="py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="glass-premium p-10" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-gold font-bold uppercase text-xs mb-4 tracking-tighter">Mobilidade Curada</h3>
+                <p class="text-xs text-gray-500 leading-loose">Linhas T11 e 520.3. Frotas 100% climatizadas. O frescor é sua recompensa matinal.</p>
             </div>
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up" data-aos-delay="100">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Caos Logístico</h4>
-                <p class="text-xs text-gray-500">Desorganização e atrasos são vírus no sistema. A pontualidade é o nosso oxigênio.</p>
+            <div class="glass-premium p-10" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-gold font-bold uppercase text-xs mb-4 tracking-tighter">Nutrição Alpha</h3>
+                <p class="text-xs text-gray-500 leading-loose">Vale Alimentação de alta performance. O combustível para sua jornada de herói.</p>
             </div>
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Desarmonia Social</h4>
-                <p class="text-xs text-gray-500">Conflitos e fofocas são falhas estruturais. O refeitório é um templo de reposição calórica limpo.</p>
+            <div class="glass-premium p-10" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="text-gold font-bold uppercase text-xs mb-4 tracking-tighter">Jornada 7x0</h3>
+                <p class="text-xs text-gray-500 leading-loose">Dedicação plena. 9h/dia. Para quem entende que o topo não aceita pausas desnecessárias.</p>
             </div>
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Quebra de Protocolo</h4>
-                <p class="text-xs text-gray-500">Falha no uniforme ou mentiras operacionais resultam em desconexão imediata.</p>
-            </div>
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up" data-aos-delay="100">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Inconveniência</h4>
-                <p class="text-xs text-gray-500">Ser invasivo com a rede de talentos. Mantenha o profissionalismo estatutário acima de tudo.</p>
-            </div>
-            <div class="p-8 border border-red-900/30 bg-red-950/10" data-aos="fade-up" data-aos-delay="200">
-                <h4 class="text-red-500 font-bold uppercase mb-2">Baixa Adaptabilidade</h4>
-                <p class="text-xs text-gray-500">Resistência a novas diretrizes do ecossistema. A flexibilidade é a chave da permanência.</p>
+            <div class="glass-premium p-10" data-aos="fade-up" data-aos-delay="400">
+                <h3 class="text-gold font-bold uppercase text-xs mb-4 tracking-tighter">Suporte RH</h3>
+                <p class="text-xs text-gray-500 leading-loose">Eficiência omnipresente. Monitoramento constante do seu sucesso operacional.</p>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 bg-gradient-to-b from-transparent to-[#111]">
-        <div class="max-w-4xl mx-auto glass-card p-12 md:p-20 rounded-none border-x-0 md:border-x">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-huge uppercase gold-gradient mb-4">Dê o Próximo Passo na sua Existência.</h2>
-                <p class="text-gray-500 font-light">Este formulário é o início da sua nova vida dentro do Grupo A FIRMA.</p>
+    <section class="py-32 px-6">
+        <div class="max-w-7xl mx-auto border border-red-900/20 bg-red-950/5 p-12 md:p-24 relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 text-red-900/20 font-black text-9xl uppercase tracking-tighter select-none">REJECTED</div>
+            <h2 class="text-3xl font-header mb-16 text-red-700">O Ecossistema Rejeita:</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-xs uppercase tracking-widest text-gray-500">
+                <ul class="space-y-6">
+                    <li>Apatia à Pressão</li>
+                    <li>Caos Logístico</li>
+                </ul>
+                <ul class="space-y-6">
+                    <li>Desarmonia Social</li>
+                    <li>Quebra de Protocolo</li>
+                </ul>
+                <ul class="space-y-6">
+                    <li>Inconveniência</li>
+                    <li>Inexistência de Foco</li>
+                </ul>
             </div>
-            <form class="space-y-12">
-                <div class="relative">
-                    <input type="text" class="w-full bg-transparent border-b border-gray-800 p-4 focus:border-[#D4AF37] outline-none transition uppercase text-sm tracking-widest" placeholder="NOME COMPLETO (CONFORME CRachá)">
-                </div>
-                <div class="relative">
-                    <input type="email" class="w-full bg-transparent border-b border-gray-800 p-4 focus:border-[#D4AF37] outline-none transition uppercase text-sm tracking-widest" placeholder="E-MAIL PARA RECEBER METAS">
-                </div>
-                <button type="button" class="btn-main w-full py-6 text-sm uppercase">Submeter Dados ao Ecossistema</button>
+        </div>
+    </section>
+
+    <section id="join" class="py-32 px-6">
+        <div class="max-w-2xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-4xl font-header gold-text mb-12 uppercase">Seja Parte da Engrenagem</h2>
+            <form class="space-y-8">
+                <input type="text" placeholder="Nome Completo Corporativo" class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest">
+                <input type="email" placeholder="E-mail de Intenção" class="w-full bg-transparent border-b border-gray-800 py-4 outline-none focus:border-gold transition text-xs uppercase tracking-widest">
+                <button type="button" class="btn-elite w-full py-6 mt-8">Submeter ao Conselho</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-800 text-[10px] tracking-[0.5em] uppercase">
-        © 2026 GRUPO A FIRMA | Todos os direitos integrados.
+    <footer class="py-20 text-center border-t border-white/5 opacity-30">
+        <p class="text-[8px] tracking-[1em] uppercase">© 2026 THE FIRMA CORP | Absolute Discretion Required</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1200, once: true });</script>
+    <script>
+        AOS.init();
+        
+        // Efeito de movimento do cursor
+        const glow = document.querySelector('.cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.setProperty('--x', e.clientX + 'px');
+            glow.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Parallax na imagem hero
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            document.getElementById('hero-img').style.transform = `scale(1.1) translateY(${scroll * 0.5}px)`;
+        });
+    </script>
 </body>
 </html>
-
