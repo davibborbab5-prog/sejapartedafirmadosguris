@@ -2,93 +2,117 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Recrutamento Estratégico | Grupo A FIRMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutamento | Grupo A FIRMA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
         .gold-gradient { background: linear-gradient(90deg, #D4AF37 0%, #F3E5AB 50%, #C5A028 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.4s ease; }
-        .glass:hover { border-color: #D4AF37; background: rgba(255, 255, 255, 0.05); }
-        .btn-premium { background: linear-gradient(to right, #D4AF37, #A8871E); transition: all 0.4s ease; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; color: black; }
-        .btn-premium:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-gold { background: linear-gradient(to right, #D4AF37, #A8871E); color: black; font-weight: 800; transition: 0.3s; }
+        .btn-gold:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
     </style>
 </head>
-<body class="bg-[#050505]">
+<body>
 
-    <header class="relative h-screen flex items-center justify-center text-center px-6 overflow-hidden">
-        <img src="Screenshot_20260419_124246_Gallery.jpg" alt="Capa Profissional" class="absolute inset-0 w-full h-full object-cover z-0 opacity-30">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#050505] z-1"></div>
-
-        <div class="relative z-10" data-aos="fade-up" data-aos-duration="1500">
-            <span class="tracking-[0.5em] text-[10px] text-gray-400 uppercase mb-4 block font-bold">Excelência Operacional</span>
-            <h1 class="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-6 leading-none">
-                A <span class="gold-gradient">FIRMA</span>
-            </h1>
-            <div class="h-[1px] w-24 bg-[#D4AF37] mx-auto mb-8"></div>
-            <p class="text-gray-300 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-                Construindo o futuro através de talentos resilientes. <br>
-                Um ecossistema focado em <span class="text-white font-bold">performance ética</span> e resultados exponenciais.
+    <header class="relative h-screen flex items-center justify-center text-center px-6">
+        <img src="Screenshot_20260419_124246_Gallery.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
+        <div class="relative z-10" data-aos="fade-down">
+            <h1 class="text-7xl md:text-9xl font-black uppercase tracking-tighter mb-2">A <span class="gold-gradient">FIRMA</span></h1>
+            <p class="text-xl tracking-[0.4em] text-gray-400 uppercase font-light">A Engrenagem que nunca dorme</p>
+            <p class="mt-8 text-gray-300 max-w-xl mx-auto italic font-light">
+                "Onde o seu esforço se torna o legado da nossa estrutura. Não é apenas uma função, é o seu lugar no progresso."
             </p>
-            <div class="mt-10">
-                <a href="#diretrizes" class="btn-premium px-10 py-4 rounded-full inline-block text-sm">Conhecer Diretrizes</a>
-            </div>
         </div>
     </header>
 
-    <section id="diretrizes" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-sm tracking-[0.4em] text-[#D4AF37] uppercase mb-4">Nosso Manifesto</h2>
-            <h3 class="text-3xl font-bold uppercase italic font-black">Cultura de Alto Impacto</h3>
+    <section class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+            <img src="1000147942.jpg" class="rounded-2xl border border-white/10 shadow-2xl" alt="Imensidão Corporativa">
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="glass p-10 rounded-3xl" data-aos="fade-right">
-                <h4 class="text-[#D4AF37] font-bold mb-4 uppercase tracking-widest text-sm">Missão Corporativa</h4>
-                <p class="text-gray-400 leading-relaxed font-light">
-                    A FIRMA é uma organização pautada na transparência e no crescimento mútuo. Acreditamos que a sinergia entre indivíduos qualificados é a base para superar desafios complexos no mercado atual.
-                </p>
-            </div>
-            <div class="glass p-10 rounded-3xl" data-aos="fade-left">
-                <h4 class="text-[#D4AF37] font-bold mb-4 uppercase tracking-widest text-sm">Visão de Futuro</h4>
-                <p class="text-gray-400 leading-relaxed font-light">
-                    Nosso objetivo é ser a principal incubadora de talentos da região, oferecendo um ambiente seguro, profissional e focado no desenvolvimento de competências de liderança.
-                </p>
-            </div>
+        <div data-aos="fade-left">
+            <h2 class="text-4xl font-black uppercase mb-6 gold-gradient">Nossa Essência</h2>
+            <p class="text-gray-400 leading-relaxed text-lg font-light">
+                A Firma é um ecossistema estatutário. Composta por centenas de talentos sinérgicos, somos o pilar que sustenta o progresso através da disciplina. Ser parte da Firma é entender que sua dedicação serve a um propósito maior: o funcionamento impecável do nosso ecossistema. Aqui, transformamos tempo em excelência e dedicação em resultados sólidos.
+            </p>
         </div>
     </section>
 
     <section class="py-24 px-6 bg-white/[0.02]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="text-center p-8" data-aos="zoom-in" data-aos-delay="100">
-                <div class="text-3xl mb-4">🤝</div>
-                <h3 class="font-bold uppercase text-white mb-2">Colaboração</h3>
-                <p class="text-gray-500 text-sm">Trabalho em rede onde o sucesso de um é o sucesso do grupo.</p>
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-xs tracking-[0.5em] text-gray-500 uppercase">Arquitetura de Recompensas</h2>
+            <h3 class="text-4xl font-bold mt-4 uppercase">Vantagens Exclusivas</h3>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
+            <div class="glass p-6 rounded-2xl" data-aos="zoom-in">
+                <img src="1000147943.jpg" class="w-full h-48 object-cover rounded-xl mb-4 opacity-70">
+                <h4 class="font-bold text-[#D4AF37] uppercase">Ouro Negro da Mobilidade</h4>
+                <p class="text-sm text-gray-400 mt-2">Logística curada: frotas climatizadas e renovadas para garantir seu frescor matinal antes do início das operações.</p>
             </div>
-            <div class="text-center p-8" data-aos="zoom-in" data-aos-delay="200">
-                <div class="text-3xl mb-4">📈</div>
-                <h3 class="font-bold uppercase text-white mb-2">Mérito</h3>
-                <p class="text-gray-500 text-sm">Reconhecimento baseado em resultados reais e conduta exemplar.</p>
+            <div class="glass p-6 rounded-2xl" data-aos="zoom-in" data-aos-delay="100">
+                <img src="1000147948.jpg" class="w-full h-48 object-cover rounded-xl mb-4 opacity-70">
+                <h4 class="font-bold text-[#D4AF37] uppercase">Nutrição de Alta Performance</h4>
+                <p class="text-sm text-gray-400 mt-2">Suporte alimentar estratégico para sustentar sua jornada de conquistas dentro da estrutura.</p>
             </div>
-            <div class="text-center p-8" data-aos="zoom-in" data-aos-delay="300">
-                <div class="text-3xl mb-4">💎</div>
-                <h3 class="font-bold uppercase text-white mb-2">Integridade</h3>
-                <p class="text-gray-500 text-sm">Compromisso inegociável com a ética em todas as operações.</p>
+            <div class="glass p-6 rounded-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <img src="1000147941.jpg" class="w-full h-48 object-cover rounded-xl mb-4 opacity-70">
+                <h4 class="font-bold text-[#D4AF37] uppercase">Foco Total</h4>
+                <p class="text-sm text-gray-400 mt-2">Dedicamos o máximo de tempo ao crescimento. Uma estrutura de jornada pensada para quem realmente veste a camisa.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-16 text-center border-t border-white/5">
-        <p class="text-gray-600 text-[10px] uppercase tracking-[0.3em]">
-            © 2026 Grupo A FIRMA | Desenvolvimento Humano & Performance
-        </p>
+    <section class="relative py-32 px-6 text-center">
+        <img src="1000147948.jpg" class="absolute inset-0 w-full h-full object-cover opacity-10 z-0">
+        <div class="relative z-10" data-aos="fade-up">
+            <h2 class="text-4xl font-black uppercase tracking-widest mb-4 gold-gradient">Sem Barreiras. Sem Limites.</h2>
+            <p class="max-w-2xl mx-auto text-gray-300 font-light text-lg">
+                Não exigimos qualificações prévias. A Firma é o seu novo berço profissional. Acreditamos na democratização do esforço: aqui, a sua capacidade de execução é o único critério que importa.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-center text-3xl font-bold uppercase mb-16 italic">O Que Nosso Ecossistema <span class="text-red-500">Rejeita</span></h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center" data-aos="flip-left">
+                <img src="1000147944.jpg" class="w-full h-32 object-cover rounded-lg mb-2 grayscale">
+                <p class="text-[10px] uppercase font-bold text-gray-500">Apatia à Pressão</p>
+            </div>
+            <div class="glass p-4 rounded-xl text-center" data-aos="flip-left" data-aos-delay="100">
+                <img src="1000147945.jpg" class="w-full h-32 object-cover rounded-lg mb-2 grayscale">
+                <p class="text-[10px] uppercase font-bold text-gray-500">Desorganização</p>
+            </div>
+            </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#111] border-t border-white/5">
+        <div class="max-w-3xl mx-auto glass p-10 md:p-16 rounded-[40px] shadow-2xl">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold uppercase gold-gradient">Inicie sua nova Existência Corporativa</h2>
+                <p class="text-gray-500 text-sm mt-2 font-light">Preencha o formulário para a triagem inicial.</p>
+            </div>
+            <form action="#" class="space-y-6">
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">Nome Completo (Conforme Futuro Crachá)</label>
+                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-[#D4AF37] outline-none transition" placeholder="Digite seu nome...">
+                </div>
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-2">E-mail Corporativo para Metas</label>
+                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-[#D4AF37] outline-none transition" placeholder="email@exemplo.com">
+                </div>
+                <button type="button" class="btn-gold w-full py-5 rounded-full uppercase tracking-widest text-xs mt-4">Submeter ao RH</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-700 text-[10px] tracking-widest">
+        © 2026 GRUPO A FIRMA | UNIDADE OPERACIONAL SUL
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script>AOS.init();</script>
 </body>
 </html>
